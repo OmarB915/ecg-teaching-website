@@ -1,0 +1,225 @@
+<!-- Website Created: 2021-05-01 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECG Essentials</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #0073e6;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #005bb5;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+        }
+        nav a:hover {
+            background-color: #004494;
+        }
+        main {
+            padding: 2rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        footer {
+            text-align: center;
+            background-color: #0073e6;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .card {
+            background: white;
+            padding: 1rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .card h3 {
+            margin-top: 0;
+        }
+        .ecg-image {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .ecg-image img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .visitor-count {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: #555;
+        }
+        .entrance {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #005bb5;
+            color: white;
+        }
+        .entrance input {
+            padding: 0.5rem;
+            margin: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .entrance button {
+            padding: 0.5rem 1rem;
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .entrance button:hover {
+            background-color: #004494;
+        }
+        .mcq {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .mcq h4 {
+            margin: 0 0 1rem 0;
+        }
+        .mcq input {
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="entrance">
+        <h1>Welcome to ECG Essentials</h1>
+        <p>Please enter the access code to proceed:</p>
+        <input type="password" id="access-code" placeholder="Enter your code">
+        <button onclick="checkAccessCode()">Enter</button>
+        <p id="error-message" style="color: red; display: none;">Incorrect code. Please try again.</p>
+    </div>
+
+    <div id="main-content" style="display: none;">
+        <header>
+            <h1>ECG Essentials</h1>
+            <p>Your guide to mastering ECG interpretation</p>
+            <div class="visitor-count">Visitors so far: 300</div>
+        </header>
+        <nav>
+            <a href="#basics">ECG Basics</a>
+            <a href="#reading">How to Read an ECG</a>
+            <a href="#normal">Normal ECG</a>
+            <a href="#abnormal">Abnormal ECG</a>
+            <a href="#resources">Resources</a>
+        </nav>
+        <main>
+            <section id="basics">
+                <h2>ECG Basics</h2>
+                <div class="card">
+                    <h3>Understanding the ECG</h3>
+                    <p>Learn about the different components of an ECG, including the P wave, QRS complex, and T wave.</p>
+                </div>
+            </section>
+
+            <section id="reading">
+                <h2>How to Read an ECG</h2>
+                <div class="card">
+                    <h3>Step-by-Step Guide</h3>
+                    <p>Learn the systematic approach to reading ECGs, including rate, rhythm, axis, intervals, and waveform abnormalities.</p>
+                </div>
+            </section>
+
+            <section id="normal">
+                <h2>Normal ECG</h2>
+                <div class="card">
+                    <h3>Features of a Normal ECG</h3>
+                    <p>Understand the key features of a normal ECG, including normal P waves, PR interval, QRS complex, and T wave morphology.</p>
+                </div>
+            </section>
+
+            <section id="abnormal">
+                <h2>Abnormal ECG</h2>
+                <div class="card">
+                    <h3>Bradyarrhythmias</h3>
+                    <p>Explore ECG patterns for bradyarrhythmias such as sinus bradycardia and complete heart block.</p>
+                </div>
+                <div class="card">
+                    <h3>Tachyarrhythmias</h3>
+                    <p>Understand ECG findings for tachyarrhythmias, including atrial fibrillation, atrial flutter, and ventricular tachycardia.</p>
+                </div>
+                <div class="card">
+                    <h3>Bundle Branch Blocks</h3>
+                    <p>Learn to identify right bundle branch block (RBBB) and left bundle branch block (LBBB) on ECG.</p>
+                </div>
+                <div class="card">
+                    <h3>ST Segment Changes</h3>
+                    <p>Recognize ST elevation and depression and their clinical significance.</p>
+                </div>
+                <div class="card">
+                    <h3>Specific Conditions</h3>
+                    <ul>
+                        <li>Hypertrophic Obstructive Cardiomyopathy (HOCM)</li>
+                        <li>Arrhythmogenic Right Ventricular Dysplasia (ARVD)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="resources">
+                <h2>Resources</h2>
+                <div class="card">
+                    <h3>Downloadable Guides</h3>
+                    <p>Access free PDF guides on ECG interpretation.</p>
+                </div>
+                <div class="card">
+                    <h3>Recommended Reading</h3>
+                    <p>Explore a curated list of books and articles to deepen your understanding.</p>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 ECG Essentials. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function checkAccessCode() {
+            const code = document.getElementById('access-code').value;
+            const correctCode = 'ECG2024';
+
+            if (code === correctCode) {
+                document.querySelector('.entrance').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
